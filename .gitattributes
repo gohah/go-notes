@@ -1,4 +1,5 @@
 *.md linguist-language=Markdown
+
 *.js linguist-language=Markdown
 *.css linguist-language=Markdown
 *.html linguist-language=Markdown
