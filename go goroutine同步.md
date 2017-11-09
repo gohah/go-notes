@@ -107,6 +107,49 @@ func main() {
 
 ```
 
+```
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	a := make(chan int, 5)
+
+	go func(){
+		for _,i := range []int{1,2,3,4,5} {
+			a <- i
+		}
+	}()
+
+	//go func(){
+	//	for{
+	//		i,ok := <-a
+	//		fmt.Println(i,ok)
+	//
+	//		if !ok {
+	//			break
+	//		}
+	//	}
+	//}()
+
+	go func(){
+		for v := range a{
+
+			fmt.Println(v)
+		}
+	}()
+
+	time.Sleep(5*time.Second)
+	close(a)
+	time.Sleep(5*time.Second)
+
+}
+
+```
+
 > channel的关闭
 使用内置函数close进行关闭，chan关闭之后，for range遍历chan中
 已经存在的元素后结束
