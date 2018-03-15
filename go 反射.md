@@ -1,4 +1,4 @@
-
+# go 反射
 ```
 package main
 
@@ -54,6 +54,15 @@ func main() {
        fmt.Println(b)
 
 }
+```
+
+```
+main.Student
+struct
+{stu01 18 92} main.Student
+get value  interface{} 100
+string val:100
+100
 ```
 
 
@@ -127,3 +136,20 @@ func main() {
        fmt.Println(a)
 }
 ```
+
+
+```
+json result: {"student_name":"stu01","Age":18,"Score":92.8,"Sex":""}
+0 string
+1 int
+2 float32
+3 string
+struct has 4 fields
+tag=student_name
+struct has 2 methods
+---start----
+{stu1000 18 92.8 }
+---end----
+{stu1000 18 92.8 }
+```
+

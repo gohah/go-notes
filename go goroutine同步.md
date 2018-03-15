@@ -1,4 +1,4 @@
-
+# go goroutine同步
 ```
 package main
 
@@ -103,49 +103,6 @@ func main() {
                      break
               }
        }
-}
-
-```
-
-```
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	a := make(chan int, 5)
-
-	go func(){
-		for _,i := range []int{1,2,3,4,5} {
-			a <- i
-		}
-	}()
-
-	//go func(){
-	//	for{
-	//		i,ok := <-a
-	//		fmt.Println(i,ok)
-	//
-	//		if !ok {
-	//			break
-	//		}
-	//	}
-	//}()
-
-	go func(){
-		for v := range a{
-
-			fmt.Println(v)
-		}
-	}()
-
-	time.Sleep(5*time.Second)
-	close(a)
-	time.Sleep(5*time.Second)
-
 }
 
 ```

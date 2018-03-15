@@ -1,3 +1,4 @@
+# go flag命令行使用方法
 Go语言通过使用标准库里的flag包来处理命令行参数。
 
 Package flag implements command-line flag parsing.

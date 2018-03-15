@@ -1,3 +1,4 @@
+# go string rune byte 的关系
 在Go当中 string底层是用byte数组存的，并且是不可以改变的。
 
 例如 s:="Go编程" fmt.Println(len(s)) 输出结果应该是8因为中文字符是用3个字节存的。
